@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block body %}
+    <div style="max-width: 600px; margin: 50px auto; background-color: #f8f9fa; padding: 30px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h1 style="font-size: 2.5rem; color: #343a40; margin-bottom: 20px;">История сообщений</h1>
+
+        {% if messages|length > 0 %}
+            <ul style="list-style-type: none; padding: 0; font-size: 1.1rem;">
+                {% for msg in messages %}
+                    <li style="border-bottom: 1px solid #dee2e6; padding: 10px 0;">
+                        {{ msg.getMessage() }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p style="font-size: 1.2rem; color: #6c757d;">Нет доступных сообщений.</p>
+        {% endif %}
+
+        <p style="margin-top: 20px; font-size: 1rem; color: #6c757d;">
+            <a href="/" style="text-decoration: none; color: #007bff;">Назад</a>
+        </p>
+    </div>
+{% endblock %}
